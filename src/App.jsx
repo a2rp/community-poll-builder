@@ -1,5 +1,6 @@
 import { SiteHeader } from "./components/siteHeader/index.jsx";
 import { SiteFooter } from "./components/siteFooter/index.jsx";
+import { BackToTop } from "./components/backToTop/index.jsx";
 import styles from "./App.module.css";
 
 const App = () => (
@@ -10,6 +11,7 @@ const App = () => (
       <p>Ask your neighbors and decide together.</p>
     </main>
     <SiteFooter />
+    <BackToTop />
   </div>
 );
 
