@@ -66,6 +66,7 @@ const PollModal = ({ onClose, onSave }) => {
               autoFocus
               required
               maxLength="120"
+              pattern=".*\S.*"
               value={question}
               onChange={(event) => setQuestion(event.target.value)}
               placeholder="What would you like the community to decide?"
@@ -83,7 +84,7 @@ const PollModal = ({ onClose, onSave }) => {
             </label>
             <label className={styles.field}>
               Close date
-              <input type="date" min={getDateAfterDays(0)} value={closeDate} onChange={(event) => setCloseDate(event.target.value)} />
+              <input type="date" required min={getDateAfterDays(0)} value={closeDate} onChange={(event) => setCloseDate(event.target.value)} />
             </label>
           </div>
           <fieldset className={styles.options}>
@@ -93,6 +94,7 @@ const PollModal = ({ onClose, onSave }) => {
                 <input
                   required
                   maxLength="80"
+                  pattern=".*\S.*"
                   value={option}
                   onChange={(event) => updateOption(index, event.target.value)}
                   placeholder={"Choice " + (index + 1)}

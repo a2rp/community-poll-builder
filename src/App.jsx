@@ -1,14 +1,14 @@
-import { SiteHeader } from "./components/siteHeader/index.jsx";
-import { SiteFooter } from "./components/siteFooter/index.jsx";
 import { BackToTop } from "./components/backToTop/index.jsx";
+import { PollWorkspace } from "./components/pollWorkspace/index.jsx";
+import { SiteFooter } from "./components/siteFooter/index.jsx";
+import { SiteHeader } from "./components/siteHeader/index.jsx";
 import styles from "./App.module.css";
 
 const App = () => (
   <div className={styles.appShell}>
     <SiteHeader />
     <main className={styles.pageContent}>
-      <h1>Community polls</h1>
-      <p>Ask your neighbors and decide together.</p>
+      <PollWorkspace />
     </main>
     <SiteFooter />
     <BackToTop />

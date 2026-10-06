@@ -51,11 +51,11 @@
 
   .mainNav a {
     padding: 9px 0;
-    transition: color 150ms ease;
+    transition: box-shadow 150ms ease;
   }
 
   .mainNav a:hover {
-    color: var(--color-sun);
+    box-shadow: inset 0 -2px 0 var(--color-sun);
   }
 
   .actions {
@@ -142,8 +142,7 @@
     }
 
     .mainNav a:hover {
-      background: var(--color-blush);
-      color: var(--color-berry);
+      box-shadow: inset 0 0 0 1px #d6c2b3;
     }
 
     .repositoryLink {

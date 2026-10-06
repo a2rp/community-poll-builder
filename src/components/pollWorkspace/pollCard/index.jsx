@@ -51,7 +51,7 @@ const PollCard = ({ poll, selectedChoice, onSelectChoice, onVote, onDelete }) =>
         })}
       </div>
       <div className={styles.cardFooter}>
-        <p>{voteCount} {voteCount === 1 ? "response" : "responses"} <span>•</span> {poll.closed ? "Poll closed" : "Open to the community"}</p>
+        <p>{voteCount} {voteCount === 1 ? "response" : "responses"} <span>{"\u00b7"}</span> {poll.closed ? "Poll closed" : "Open to the community"}</p>
         {!poll.closed ? (
           <button className={styles.voteButton} type="button" disabled={!selectedChoice || alreadySelected} onClick={() => onVote(poll.id)}>
             {alreadySelected ? "Vote saved" : poll.selectedVote ? "Update vote" : "Cast your vote"}

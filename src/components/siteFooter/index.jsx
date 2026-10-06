@@ -22,7 +22,7 @@ const SiteFooter = () => (
           <img src={import.meta.env.BASE_URL + "logo.png"} alt="Ashish Ranjan logo" />
         </a>
         <p>
-          © {new Date().getFullYear()} <a href="https://github.com/a2rp">Ashish Ranjan</a>. All rights reserved.
+          {"\u00a9"} {new Date().getFullYear()} <a href="https://github.com/a2rp">Ashish Ranjan</a>. All rights reserved.
         </p>
       </div>
       <nav className={styles.footerLinks} aria-label="Footer links">

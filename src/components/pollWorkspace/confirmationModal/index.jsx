@@ -51,7 +51,7 @@ const ConfirmationModal = ({ question, onCancel, onConfirm }) => {
         <span className={styles.warningIcon}><FiAlertTriangle aria-hidden="true" /></span>
         <h2 id="delete-poll-title">Delete this poll?</h2>
         <p id="delete-poll-description">
-          “{question}” and its votes will be removed from this browser. This cannot be undone.
+          {"\u201c"}{question}{"\u201d"} and its votes will be removed from this browser. This cannot be undone.
         </p>
         <div className={styles.actions}>
           <button ref={cancelButtonRef} type="button" onClick={onCancel}>Keep poll</button>
