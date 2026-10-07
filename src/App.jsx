@@ -1,4 +1,5 @@
-﻿import { PollWorkspace } from "./components/pollWorkspace/index.jsx";
+﻿import { BackToTop } from "./components/backToTop/index.jsx";
+import { PollWorkspace } from "./components/pollWorkspace/index.jsx";
 import { SiteFooter } from "./components/siteFooter/index.jsx";
 import { SiteHeader } from "./components/siteHeader/index.jsx";
 import styles from "./App.module.css";
@@ -10,6 +11,7 @@ const App = () => (
             <PollWorkspace />
         </main>
         <SiteFooter />
+        <BackToTop />
     </div>
 );
 
