@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { FiArrowRight, FiSearch, FiSliders, FiX } from "react-icons/fi";
 import { CommunityIntro } from "../communityIntro/index.jsx";
 import {
@@ -44,10 +44,9 @@ const PollWorkspace = () => {
 
         try {
             localStorage.setItem("civic-loop-polls", JSON.stringify(nextPolls));
+            return true;
         } catch {
-            setStatusMessage(
-                "This browser could not save changes. The page is still usable.",
-            );
+            return false;
         }
     };
 
@@ -101,34 +100,36 @@ const PollWorkspace = () => {
             return { ...item, options, selectedVote: choice };
         });
 
-        savePolls(nextPolls);
+        const saved = savePolls(nextPolls);
         setStatusMessage(
-            hadPreviousVote
-                ? "Your vote has been updated."
-                : "Your vote has been added.",
+            saved
+                ? hadPreviousVote
+                    ? "Your vote has been updated."
+                    : "Your vote has been added."
+                : "This browser could not save your vote for the next visit.",
         );
     };
 
     const addPoll = (newPoll) => {
-        savePolls([newPoll, ...polls]);
+        const saved = savePolls([newPoll, ...polls]);
         setActiveStatus("Open");
         setSelectedTopic("All topics");
         setSearch("");
         setCreateOpen(false);
-        setStatusMessage("Your poll is now open.");
+        setStatusMessage(saved ? "Your poll is now open." : "This browser could not save the poll for the next visit.");
     };
 
     const deletePoll = () => {
         if (!pollToDelete) return;
 
-        savePolls(polls.filter((poll) => poll.id !== pollToDelete.id));
+        const saved = savePolls(polls.filter((poll) => poll.id !== pollToDelete.id));
         setSelectedChoices((current) => {
             const nextChoices = { ...current };
             delete nextChoices[pollToDelete.id];
             return nextChoices;
         });
         setPollToDelete(null);
-        setStatusMessage("Poll removed from this browser.");
+        setStatusMessage(saved ? "Poll removed from this browser." : "This browser could not save the removal for the next visit.");
     };
 
     return (
