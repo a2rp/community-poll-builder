@@ -1,16 +1,20 @@
-.appShell {
+﻿.appShell {
     min-height: 100vh;
     background: var(--page);
     color: var(--ink);
 
     .pageContent {
         width: min(1180px, calc(100% - 48px));
-        min-height: 100vh;
-        margin-inline: auto;
-        display: grid;
-        place-content: center;
-        gap: 16px;
-        text-align: center;
+        margin: 76px auto 0;
+        padding: 60px 0 100px;
+
+        .firstSection {
+            min-height: 370px;
+            display: grid;
+            place-content: center;
+            gap: 16px;
+            text-align: center;
+        }
 
         .mark {
             width: fit-content;
@@ -31,6 +35,14 @@
 
         p {
             color: var(--muted);
+        }
+
+        .secondSection {
+            min-height: 260px;
+            padding: 40px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--paper);
         }
     }
 }

@@ -1,0 +1,201 @@
+﻿.siteHeader {
+    position: fixed;
+    z-index: 20;
+    inset: 0 0 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(26, 40, 95, 0.16);
+
+    .inner {
+        position: relative;
+        width: min(1240px, calc(100% - 40px));
+        min-height: 76px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+    }
+
+    .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+    }
+
+    .brandMark {
+        width: 39px;
+        height: 39px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(225, 239, 105, 0.7);
+        border-radius: 12px;
+        background: var(--lime);
+        color: var(--blue-dark);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+    }
+
+    .brandName {
+        font-size: 19px;
+        font-weight: 850;
+        letter-spacing: -0.04em;
+
+        span {
+            color: var(--lime);
+        }
+    }
+
+    .mainNavigation,
+    .mainNavigationOpen {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        a {
+            padding: 10px 13px;
+            border: 1px solid transparent;
+            border-radius: 9px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 13px;
+            font-weight: 700;
+            transition:
+                border-color 160ms ease,
+                box-shadow 160ms ease;
+
+            &:hover,
+            &:focus-visible {
+                border-color: rgba(225, 239, 105, 0.5);
+                box-shadow: 0 0 0 3px rgba(225, 239, 105, 0.12);
+                color: #fff;
+                outline: none;
+            }
+        }
+    }
+
+    .headerActions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .repositoryLink {
+        min-height: 40px;
+        padding: 0 13px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 9px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 750;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--lime);
+            box-shadow: 0 0 0 3px rgba(225, 239, 105, 0.16);
+            outline: none;
+        }
+    }
+
+    .menuButton {
+        width: 42px;
+        height: 42px;
+        display: none;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 10px;
+        background: transparent;
+        color: #fff;
+
+        svg {
+            width: 19px;
+            height: 19px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .inner {
+            width: calc(100% - 28px);
+            min-height: 68px;
+            gap: 10px;
+        }
+
+        .brandName {
+            font-size: 17px;
+        }
+
+        .mainNavigation,
+        .mainNavigationOpen {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            left: 0;
+            padding: 10px;
+            display: none;
+            align-items: stretch;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 13px;
+            background: var(--blue-dark);
+            box-shadow: var(--shadow);
+
+            a {
+                padding: 12px;
+            }
+        }
+
+        .mainNavigationOpen {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .repositoryLink {
+            min-height: 38px;
+            padding: 0 10px;
+            font-size: 11px;
+        }
+
+        .menuButton {
+            display: grid;
+        }
+    }
+
+    @media (max-width: 390px) {
+        .inner {
+            width: calc(100% - 20px);
+        }
+
+        .brand {
+            gap: 7px;
+        }
+
+        .brandMark {
+            width: 34px;
+            height: 34px;
+        }
+
+        .repositoryLink {
+            gap: 5px;
+            padding: 0 8px;
+            font-size: 10px;
+        }
+
+        .menuButton {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
