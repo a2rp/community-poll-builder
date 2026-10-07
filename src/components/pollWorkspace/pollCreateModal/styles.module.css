@@ -1,0 +1,264 @@
+﻿.backdrop {
+    position: fixed;
+    z-index: 50;
+    inset: 0;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    background: rgba(19, 27, 61, 0.68);
+    backdrop-filter: blur(5px);
+}
+
+.dialog {
+    width: min(590px, 100%);
+    max-height: min(90vh, 860px);
+    overflow-y: auto;
+    border: 1px solid #d9ddd1;
+    border-radius: 18px;
+    background: var(--paper);
+    box-shadow: 0 25px 80px rgba(12, 20, 52, 0.3);
+
+    .dialogHeader {
+        padding: 23px 25px 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        border-bottom: 1px solid var(--line);
+
+        h2 {
+            margin-top: 3px;
+            color: var(--ink);
+            font-size: 25px;
+            font-weight: 850;
+            letter-spacing: -0.05em;
+        }
+
+        p:last-child {
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+    }
+
+    .label {
+        color: var(--blue);
+        font-size: 11px;
+        font-weight: 850;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+    }
+
+    .closeButton {
+        width: 39px;
+        height: 39px;
+        flex: 0 0 auto;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        background: transparent;
+        color: var(--muted);
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(38, 59, 136, 0.11);
+            outline: none;
+        }
+    }
+
+    .form {
+        padding: 23px 25px 25px;
+        display: grid;
+        gap: 17px;
+    }
+
+    .field {
+        min-width: 0;
+        display: grid;
+        gap: 7px;
+
+        > span {
+            color: var(--ink);
+            font-size: 12px;
+            font-weight: 750;
+        }
+
+        input,
+        select {
+            width: 100%;
+            min-height: 44px;
+            padding: 0 12px;
+            border: 1px solid #ccd1c9;
+            border-radius: 8px;
+            background: #fff;
+            color: var(--ink);
+            font-size: 13px;
+
+            &:focus {
+                border-color: var(--blue);
+                outline: 3px solid rgba(38, 59, 136, 0.12);
+            }
+        }
+    }
+
+    .twoFields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .choiceFields {
+        min-width: 0;
+        padding: 14px;
+        display: grid;
+        gap: 9px;
+        border: 1px solid var(--line);
+        border-radius: 11px;
+
+        legend {
+            padding: 0 6px;
+            color: var(--ink);
+            font-size: 12px;
+            font-weight: 750;
+        }
+    }
+
+    .choiceRow {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 38px;
+        gap: 8px;
+
+        input {
+            min-width: 0;
+            min-height: 42px;
+            padding: 0 11px;
+            border: 1px solid #ccd1c9;
+            border-radius: 8px;
+            background: #fff;
+            font-size: 13px;
+
+            &:focus {
+                border-color: var(--blue);
+                outline: 3px solid rgba(38, 59, 136, 0.12);
+            }
+        }
+    }
+
+    .removeChoice,
+    .addChoice {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(38, 59, 136, 0.1);
+            outline: none;
+        }
+    }
+
+    .removeChoice {
+        width: 38px;
+    }
+
+    .addChoice {
+        width: fit-content;
+        min-height: 35px;
+        padding: 0 10px;
+        color: var(--blue);
+    }
+
+    .helperText,
+    .error {
+        color: var(--muted);
+        font-size: 11px;
+    }
+
+    .error {
+        color: #a34a35;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding-top: 4px;
+
+        button {
+            min-height: 42px;
+            padding: 0 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 800;
+            transition:
+                border-color 160ms ease,
+                box-shadow 160ms ease;
+
+            &:hover,
+            &:focus-visible {
+                border-color: var(--blue);
+                box-shadow: 0 0 0 3px rgba(38, 59, 136, 0.1);
+                outline: none;
+            }
+        }
+    }
+
+    .cancelButton {
+        background: #fff;
+        color: var(--ink);
+    }
+
+    .submitButton {
+        border-color: var(--blue) !important;
+        background: var(--blue);
+        color: #fff;
+    }
+
+    @media (max-width: 520px) {
+        .dialogHeader {
+            padding: 19px 18px;
+        }
+
+        .form {
+            padding: 19px 18px;
+        }
+
+        .twoFields {
+            grid-template-columns: 1fr;
+        }
+
+        .actions {
+            button {
+                flex: 1;
+            }
+        }
+    }
+}
