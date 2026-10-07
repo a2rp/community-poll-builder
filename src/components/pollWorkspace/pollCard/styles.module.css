@@ -1,0 +1,278 @@
+﻿.pollCard {
+    display: grid;
+    grid-template-columns: 145px minmax(0, 1fr);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--paper);
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+
+    &:hover {
+        border-color: #a9b1cb;
+        box-shadow: 0 10px 26px rgba(32, 40, 63, 0.08);
+    }
+
+    .sideInfo {
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        border-right: 1px solid var(--line);
+        background: #e9edf8;
+    }
+
+    .topic {
+        padding: 5px 8px;
+        border-radius: 6px;
+        background: #d9e0f4;
+        color: var(--blue-dark);
+        font-size: 10px;
+        font-weight: 800;
+        line-height: 1.25;
+    }
+
+    .closeDate,
+    .closedDate {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+
+        svg {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    .closedDate {
+        color: #9a513b;
+    }
+
+    .responseCount {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+
+        svg {
+            width: 14px;
+            height: 14px;
+            color: var(--blue);
+        }
+    }
+
+    .main {
+        min-width: 0;
+        padding: 20px 22px 16px;
+    }
+
+    .questionRow {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 14px;
+
+        h3 {
+            max-width: 690px;
+            color: var(--ink);
+            font-size: 21px;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -0.035em;
+        }
+    }
+
+    .deleteButton {
+        width: 36px;
+        height: 36px;
+        flex: 0 0 auto;
+        display: grid;
+        place-items: center;
+        border: 1px solid transparent;
+        border-radius: 9px;
+        background: transparent;
+        color: var(--muted);
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: #e9b2a0;
+            box-shadow: 0 0 0 3px rgba(242, 123, 91, 0.12);
+            color: #a34a35;
+            outline: none;
+        }
+    }
+
+    .options {
+        margin-top: 14px;
+        display: grid;
+        gap: 7px;
+    }
+
+    .option,
+    .optionSelected {
+        min-height: 44px;
+        padding: 8px 11px;
+        display: grid;
+        gap: 5px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        text-align: left;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+
+        &:hover:not(:disabled),
+        &:focus-visible {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(38, 59, 136, 0.1);
+            outline: none;
+        }
+
+        &:disabled {
+            cursor: default;
+        }
+    }
+
+    .optionSelected {
+        border-color: var(--blue);
+        background: #f4f6fc;
+    }
+
+    .optionText {
+        display: grid;
+        grid-template-columns: 18px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 8px;
+        color: var(--ink);
+        font-size: 12px;
+
+        strong {
+            color: var(--blue);
+            font-size: 11px;
+        }
+    }
+
+    .radioMark {
+        width: 17px;
+        height: 17px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #aeb5c5;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 900;
+    }
+
+    .optionSelected .radioMark {
+        border-color: var(--blue);
+        background: var(--blue);
+    }
+
+    .barTrack {
+        height: 4px;
+        overflow: hidden;
+        border-radius: 4px;
+        background: #eaecf1;
+
+        > span {
+            height: 100%;
+            display: block;
+            border-radius: inherit;
+            background: var(--coral);
+        }
+    }
+
+    .cardBottom {
+        margin-top: 15px;
+        padding-top: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        border-top: 1px solid #e7e9e1;
+    }
+
+    .voteStatus {
+        color: var(--muted);
+        font-size: 11px;
+    }
+
+    .voteButton {
+        min-height: 38px;
+        padding: 0 15px;
+        border: 1px solid var(--blue);
+        border-radius: 8px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 800;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+
+        &:hover:not(:disabled),
+        &:focus-visible {
+            border-color: var(--blue-dark);
+            box-shadow: 0 0 0 3px rgba(38, 59, 136, 0.14);
+            outline: none;
+        }
+
+        &:disabled {
+            border-color: #c8ccda;
+            background: #e5e7ed;
+            color: #737b8d;
+        }
+    }
+
+    @media (max-width: 620px) {
+        grid-template-columns: 1fr;
+
+        .sideInfo {
+            padding: 12px 14px;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            border-right: 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .responseCount {
+            margin: 0 0 0 auto;
+        }
+
+        .main {
+            padding: 15px;
+        }
+
+        .questionRow h3 {
+            font-size: 18px;
+        }
+
+        .cardBottom {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .voteButton {
+            width: 100%;
+        }
+    }
+}
