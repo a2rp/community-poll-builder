@@ -1,4 +1,5 @@
 ﻿import { PollWorkspace } from "./components/pollWorkspace/index.jsx";
+import { SiteFooter } from "./components/siteFooter/index.jsx";
 import { SiteHeader } from "./components/siteHeader/index.jsx";
 import styles from "./App.module.css";
 
@@ -8,6 +9,7 @@ const App = () => (
         <main className={styles.pageContent}>
             <PollWorkspace />
         </main>
+        <SiteFooter />
     </div>
 );
 
